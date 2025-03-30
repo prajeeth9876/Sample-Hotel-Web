@@ -74,7 +74,7 @@ button {
 
 
 header {
-  height: 20vh;
+  height: 10vh;
   width: 100%;
   line-height: 10vh;
   padding: 0 0 0 20px;
@@ -86,7 +86,8 @@ header {
   top: 0;
   background-color: white; 
   z-index: 100; /* Ensure it's above other elements */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* subtle shadow */
+  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.3); /* subtle shadow */
+  /* transition: 2s; */
 }
 
 /* sticky header *//* sticky header */

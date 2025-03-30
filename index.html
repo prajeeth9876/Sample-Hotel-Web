@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kelani Valley Hotels</title>
     <!-- icon -->
-    <link rel="icon" href="images/icon/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="image/icon/favicon.ico" type="image/x-icon" />
     <!-- css -->
     <link rel="stylesheet" href="style.css" />
     <!-- icons -fontawesom-->
@@ -26,9 +26,10 @@
   </head>
 
   <body>
-    <header class="main-menu sticky">
+    <div>
       <h1 class="main-title">Kelani Valley Hotels</h1>
-
+    </div>
+    <header class="main-menu sticky">
       <nav>
         <div class="content flex-space">
           <div class="logo">
@@ -37,11 +38,11 @@
 
           <div class="nav-links">
             <ul id="menu-list">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#facilities">Facilities</a></li>
-              <li><a href="#reserve">Reservation</a></li>
-              <li><a href="#contact">Contact Us</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="facility.html">Facilities</a></li>
+              <li><a href="#reservation">Reservation</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
               <li><i class="fa-solid fa-magnifying-glass"></i></li>
               <li><button class="primary-btn">Book Now</button></li>
             </ul>
@@ -65,10 +66,9 @@
       }
     </script> -->
 
-    <div class="middle" style="padding-top: 10px;">
-
+    <div class="middle">
       <!-- home -->
-      <section class="home">
+      <section class="home" id="home">
         <!-- gallery as a carousel -->
         <div class="content">
           <section class="slider-container">
@@ -106,9 +106,9 @@
           </section>
 
           <!-- home - Gllery - onscreen items-->
-          <div class="item">
+          <div class="item" id="gallery">
             <div class="text">
-              <h1>Spend Your Holiday</h1>
+              <h1>Embrace the Mountain's Breathe</h1>
               <h2><span>with</span> Kelani Valley Hotels</h2>
               <p>
                 Timeless elegance amidst Sri Lanka's lush tea plantation
@@ -154,7 +154,7 @@
       </script>
 
       <!-- reservations -->
-      <section class="book">
+      <section class="book" id="reservation">
         <div class="container flex-space">
           <div class="text">
             <h1><span>Reserve</span> Your Space</h1>
@@ -174,80 +174,8 @@
         </div>
       </section>
 
-      <!-- home - about -->
-      <section class="about top">
-        <div class="container flex">
-          <div class="left">
-            <div class="heading">
-              <h1>Welcome</h1>
-              <h2>Kelani Valley Hotels</h2>
-              <p>
-                Timeless elegance amidst Sri Lanka's lush tea plantation
-                paradise. Welcome to The Kelani Heritage Lodge, where timeless
-                elegance echoes the rich history of the valley. Situated amidst
-                rolling hills and tea estates, our charming retreat has been a
-                symbol of hospitality for decades. With classic decor,
-                personalized service, and a dedication to showcasing the unique
-                culture of the region, we invite you to discover the allure of
-                our accommodations and the authentic experiences we offer.
-                Whether you're a history enthusiast or a nature lover, we
-                promise an enchanting stay in a setting that blends
-                sophistication with the timeless charm of the Kelani Valley.
-              </p>
-              <button class="primary-btn">See more</button>
-            </div>
-          </div>
-
-          <div class="right">
-            <img src="image/hotel-front.jpg" alt="" />
-          </div>
-        </div>
-      </section>
-
-      <!-- Facilities - Banquets and Rooms -->
-      <section class="facilities top">
-        <div class="container">
-          <div class="heading">
-            <h1>Explore</h1>
-            <h2>Our Facilities</h2>
-
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam,
-              laboriosam similique. Suscipit, harum aperiam! Ipsam rem debitis
-              odit temporibus alias harum dicta quisquam modi, aperiam, dolores
-              incidunt accusantium consequuntur. Quam.
-            </p>
-          </div>
-
-          <div class="content mtop">
-            <div class="container flex">
-              <!-- make this separate css-->
-              <div class="left facility">
-                <h3>Banquets</h3>
-                <img src="image/facilities/banquet-1.jpg" alt="" />
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut
-                  molestias temporibus fugit quae explicabo officiis, at omnis
-                  officia voluptate quaerat numquam eos esse recusandae sit amet
-                  sunt assumenda similique quod!
-                </p>
-              </div>
-              <div class="right facility">
-                <h3>Rooms</h3>
-                <img src="image/facilities/room-1.jpg" alt="" />
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut
-                  molestias temporibus fugit quae explicabo officiis, at omnis
-                  officia voluptate quaerat numquam eos esse recusandae sit amet
-                  sunt assumenda similique quod!
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="service top">
+      <!-- Services -->
+      <section class="service top" id="Services">
         <div class="container">
           <div class="heading">
             <h1>SERVICES</h1>
@@ -309,7 +237,6 @@
           <button type="submit">Subscribe</button>
         </div>
       </section>
-
     </div>
     <!-- Footer -->
 
