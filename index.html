@@ -26,7 +26,7 @@
   </head>
 
   <body>
-    <header>
+    <header class="main-menu sticky">
       <h1 class="main-title">Kelani Valley Hotels</h1>
 
       <nav>
@@ -45,14 +45,14 @@
               <li><i class="fa-solid fa-magnifying-glass"></i></li>
               <li><button class="primary-btn">Book Now</button></li>
             </ul>
-            <span class="fa-solid fa-bars" onclick="menuToggle()"></span>
+            <!-- <span class="fa-solid fa-bars" onclick="menuToggle()"></span> -->
           </div>
         </div>
       </nav>
     </header>
 
     <!--btn press script -menuToggle- Not properly functioning  -->
-    <script>
+    <!-- <script>
       var menulist = document.getElementById("menulist");
       menulist.style.maxHeight = "0px";
 
@@ -63,236 +63,256 @@
           menulist.style.maxHeight = "0px";
         }
       }
-    </script>
+    </script> -->
 
-    <!-- home -->
-    <section class="home">
-      <!-- gallery as a carousel -->
-      <div class="content">
-        <section class="slider-container">
-          <div class="slider-wrapper">
-            <div class="slider">
-              <img src="image/banner/banner1.jpg" alt="banner1" id="slide-1" />
-              <img src="image/banner/banner2.jpg" alt="banner2" id="slide-2" />
-              <img src="image/banner/banner3.jpg" alt="banner3" id="slide-3" />
-              <img src="image/banner/banner4.jpg" alt="banner4" id="slide-4" />
+    <div class="middle" style="padding-top: 10px;">
+
+      <!-- home -->
+      <section class="home">
+        <!-- gallery as a carousel -->
+        <div class="content">
+          <section class="slider-container">
+            <div class="slider-wrapper">
+              <div class="slider">
+                <img
+                  src="image/banner/banner1.jpg"
+                  alt="banner1"
+                  id="slide-1"
+                />
+                <img
+                  src="image/banner/banner2.jpg"
+                  alt="banner2"
+                  id="slide-2"
+                />
+                <img
+                  src="image/banner/banner3.jpg"
+                  alt="banner3"
+                  id="slide-3"
+                />
+                <img
+                  src="image/banner/banner4.jpg"
+                  alt="banner4"
+                  id="slide-4"
+                />
+              </div>
+
+              <div class="slider-nav">
+                <a href="#slide-1"></a>
+                <a href="#slide-2"></a>
+                <a href="#slide-3"></a>
+                <a href="#slide-4"></a>
+              </div>
             </div>
+          </section>
 
-            <div class="slider-nav">
-              <a href="#slide-1"></a>
-              <a href="#slide-2"></a>
-              <a href="#slide-3"></a>
-              <a href="#slide-4"></a>
+          <!-- home - Gllery - onscreen items-->
+          <div class="item">
+            <div class="text">
+              <h1>Spend Your Holiday</h1>
+              <h2><span>with</span> Kelani Valley Hotels</h2>
+              <p>
+                Timeless elegance amidst Sri Lanka's lush tea plantation
+                paradise. Welcome to The Kelani Valley Hotels, where timeless
+                elegance meets the tranquility of nature. Nestled amidst the
+                verdant hills, our historic retreat has offered respite and
+                refined experiences for generations. With exquisite
+                colonial-inspired decor, attentive service, and a dedication to
+                crafting unforgettable moments, we invite you to discover the
+                serene beauty of our accommodations and the natural splendor of
+                our surroundings. Whether you're seeking a peaceful escape or an
+                adventure in the heart of the valley, we promise an enchanting
+                stay in a setting that embodies sophistication and the charm of
+                old Ceylon.
+              </p>
+              <div class="flex">
+                <button class="primary-btn">READ MORE</button>
+                <button class="secondary-btn">CONTACT US</button>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- home - Gllery - onscreen items-->
-        <div class="item">
+      <!-- home - gallery - cgpt scrip to rotate-->
+      <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll(".slider img");
+        const totalSlides = slides.length;
+        const slider = document.querySelector(".slider");
+
+        // Function - automatically scroll the slider to the next image
+        function moveToNextSlide() {
+          currentIndex = (currentIndex + 1) % totalSlides; // Loop back to the first slide
+          slider.scrollTo({
+            left: slides[currentIndex].offsetLeft, // Scroll to the next image's position
+            behavior: "smooth", // Smooth scroll transition
+          });
+        }
+
+        // Set the automatic slide change every 2 sec
+        setInterval(moveToNextSlide, 2000); // Automatically scroll every 2 sec
+      </script>
+
+      <!-- reservations -->
+      <section class="book">
+        <div class="container flex-space">
           <div class="text">
-            <h1>Spend Your Holiday</h1>
-            <h2><span>with</span> Kelani Valley Hotels</h2>
-            <p>
-              Timeless elegance amidst Sri Lanka's lush tea plantation paradise.
-              Welcome to The Kelani Valley Hotels, where timeless elegance meets
-              the tranquility of nature. Nestled amidst the verdant hills, our
-              historic retreat has offered respite and refined experiences for
-              generations. With exquisite colonial-inspired decor, attentive
-              service, and a dedication to crafting unforgettable moments, we
-              invite you to discover the serene beauty of our accommodations and
-              the natural splendor of our surroundings. Whether you're seeking a
-              peaceful escape or an adventure in the heart of the valley, we
-              promise an enchanting stay in a setting that embodies
-              sophistication and the charm of old Ceylon.
-            </p>
-            <div class="flex">
-              <button class="primary-btn">READ MORE</button>
-              <button class="secondary-btn">CONTACT US</button>
-            </div>
+            <h1><span>Reserve</span> Your Space</h1>
+          </div>
+
+          <!-- Form for booking -->
+          <div class="form">
+            <!-- <form action="index.html" method="post" class="grid"></form> -->
+            <form class="grid">
+              <input type="date" placeholder="Arrival" />
+              <input type="date" placeholder="Deparature" />
+              <input type="number" placeholder=" No of Adults" />
+              <input type="number" placeholder=" No of Children" />
+              <input type="submit" value="Check Availability" />
+            </form>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- home - gallery - cgpt scrip to rotate-->
-    <script>
-      let currentIndex = 0;
-      const slides = document.querySelectorAll(".slider img");
-      const totalSlides = slides.length;
-      const slider = document.querySelector(".slider");
-
-      // Function - automatically scroll the slider to the next image
-      function moveToNextSlide() {
-        currentIndex = (currentIndex + 1) % totalSlides; // Loop back to the first slide
-        slider.scrollTo({
-          left: slides[currentIndex].offsetLeft, // Scroll to the next image's position
-          behavior: "smooth", // Smooth scroll transition
-        });
-      }
-
-      // Set the automatic slide change every 2 sec
-      setInterval(moveToNextSlide, 2000); // Automatically scroll every 2 sec
-    </script>
-
-    <!-- reservations -->
-    <section class="book">
-      <div class="container flex-space">
-        <div class="text">
-          <h1><span>Reserve</span> Your Space</h1>
-        </div>
-
-        <!-- Form for booking -->
-        <div class="form">
-          <!-- <form action="index.html" method="post" class="grid"></form> -->
-          <form class="grid">
-            <input type="date" placeholder="Arrival" />
-            <input type="date" placeholder="Deparature" />
-            <input type="number" placeholder=" No of Adults" />
-            <input type="number" placeholder=" No of Children" />
-            <input type="submit" value="Check Availability" />
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- home - about -->
-    <section class="about top">
-      <div class="container flex">
-        <div class="left">
-          <div class="heading">
-            <h1>Welcome</h1>
-            <h2>Kelani Valley Hotels</h2>
-            <p>
-              Timeless elegance amidst Sri Lanka's lush tea plantation paradise.
-              Welcome to The Kelani Heritage Lodge, where timeless elegance
-              echoes the rich history of the valley. Situated amidst rolling
-              hills and tea estates, our charming retreat has been a symbol of
-              hospitality for decades. With classic decor, personalized service,
-              and a dedication to showcasing the unique culture of the region,
-              we invite you to discover the allure of our accommodations and the
-              authentic experiences we offer. Whether you're a history
-              enthusiast or a nature lover, we promise an enchanting stay in a
-              setting that blends sophistication with the timeless charm of the
-              Kelani Valley.
-            </p>
-            <button class="primary-btn">See more</button>
-          </div>
-        </div>
-
-        <div class="right">
-          <img src="image/hotel-front.jpg" alt="" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Facilities - Banquets and Rooms -->
-    <section class="facilities top">
-      <div class="container">
-        <div class="heading">
-          <h1>Explore</h1>
-          <h2>Our Facilities</h2>
-
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam,
-            laboriosam similique. Suscipit, harum aperiam! Ipsam rem debitis
-            odit temporibus alias harum dicta quisquam modi, aperiam, dolores
-            incidunt accusantium consequuntur. Quam.
-          </p>
-        </div>
-
-        <div class="content mtop">
-          <div class="container flex">
-            <!-- make this separate css-->
-            <div class="left facility">
-              <h3>Banquets</h3>
-              <img src="image/facilities/banquet-1.jpg" alt="" />
+      <!-- home - about -->
+      <section class="about top">
+        <div class="container flex">
+          <div class="left">
+            <div class="heading">
+              <h1>Welcome</h1>
+              <h2>Kelani Valley Hotels</h2>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut
-                molestias temporibus fugit quae explicabo officiis, at omnis
-                officia voluptate quaerat numquam eos esse recusandae sit amet
-                sunt assumenda similique quod!
+                Timeless elegance amidst Sri Lanka's lush tea plantation
+                paradise. Welcome to The Kelani Heritage Lodge, where timeless
+                elegance echoes the rich history of the valley. Situated amidst
+                rolling hills and tea estates, our charming retreat has been a
+                symbol of hospitality for decades. With classic decor,
+                personalized service, and a dedication to showcasing the unique
+                culture of the region, we invite you to discover the allure of
+                our accommodations and the authentic experiences we offer.
+                Whether you're a history enthusiast or a nature lover, we
+                promise an enchanting stay in a setting that blends
+                sophistication with the timeless charm of the Kelani Valley.
               </p>
-            </div>
-            <div class="right facility">
-              <h3>Rooms</h3>
-              <img src="image/facilities/room-1.jpg" alt="" />
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut
-                molestias temporibus fugit quae explicabo officiis, at omnis
-                officia voluptate quaerat numquam eos esse recusandae sit amet
-                sunt assumenda similique quod!
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="service top">
-      <div class="container">
-        <div class="heading">
-          <h1>SERVICES</h1>
-          <h2>Our Services</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-            cupiditate saepe quod quis voluptate asperiores aut totam similique
-            voluptatibus. Repellat officia autem consequatur quae dolores
-            quibusdam, exercitationem impedit magnam assumenda.
-          </p>
-        </div>
-
-        <div class="content flex-space">
-          <div class="left grid2">
-            <div class="box">
-              <div class="text">
-                <i class="fa-solid fa-champagne-glasses"></i>
-                <h3>Delicios Foods</h3>
-              </div>
-            </div>
-
-            <div class="box">
-              <div class="text">
-                <i class="fa-solid fa-person-biking"></i>
-                <h3>Fitness</h3>
-              </div>
-            </div>
-
-            <div class="box">
-              <div class="text">
-                <i class="fa-solid fa-utensils"></i>
-                <h3>Inhouse Restaurant</h3>
-              </div>
-            </div>
-
-            <div class="box">
-              <div class="text">
-                <i class="fa-solid fa-spa"></i>
-                <h3>Ayurvedic Spa</h3>
-              </div>
+              <button class="primary-btn">See more</button>
             </div>
           </div>
 
           <div class="right">
-            <img src="image/service/ayubowan.jpg" alt="service kvh" />
+            <img src="image/hotel-front.jpg" alt="" />
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- contact -->
-    <!-- make it shift -->
+      <!-- Facilities - Banquets and Rooms -->
+      <section class="facilities top">
+        <div class="container">
+          <div class="heading">
+            <h1>Explore</h1>
+            <h2>Our Facilities</h2>
 
-    <!-- newsletter subscription -->
-    <section class="newsletter mtop">
-      <div class="container flex-space">
-        <h1>Subscribe to Our Newsletter</h1>
-        <input type="text" placeholder="Enter your email" />
-        <button type="submit">Subscribe</button>
-      </div>
-    </section>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam,
+              laboriosam similique. Suscipit, harum aperiam! Ipsam rem debitis
+              odit temporibus alias harum dicta quisquam modi, aperiam, dolores
+              incidunt accusantium consequuntur. Quam.
+            </p>
+          </div>
 
+          <div class="content mtop">
+            <div class="container flex">
+              <!-- make this separate css-->
+              <div class="left facility">
+                <h3>Banquets</h3>
+                <img src="image/facilities/banquet-1.jpg" alt="" />
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut
+                  molestias temporibus fugit quae explicabo officiis, at omnis
+                  officia voluptate quaerat numquam eos esse recusandae sit amet
+                  sunt assumenda similique quod!
+                </p>
+              </div>
+              <div class="right facility">
+                <h3>Rooms</h3>
+                <img src="image/facilities/room-1.jpg" alt="" />
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut
+                  molestias temporibus fugit quae explicabo officiis, at omnis
+                  officia voluptate quaerat numquam eos esse recusandae sit amet
+                  sunt assumenda similique quod!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="service top">
+        <div class="container">
+          <div class="heading">
+            <h1>SERVICES</h1>
+            <h2>Our Services</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+              cupiditate saepe quod quis voluptate asperiores aut totam
+              similique voluptatibus. Repellat officia autem consequatur quae
+              dolores quibusdam, exercitationem impedit magnam assumenda.
+            </p>
+          </div>
+
+          <div class="content flex-space">
+            <div class="left grid2">
+              <div class="box">
+                <div class="text">
+                  <i class="fa-solid fa-champagne-glasses"></i>
+                  <h3>Delicios Foods</h3>
+                </div>
+              </div>
+
+              <div class="box">
+                <div class="text">
+                  <i class="fa-solid fa-person-biking"></i>
+                  <h3>Fitness</h3>
+                </div>
+              </div>
+
+              <div class="box">
+                <div class="text">
+                  <i class="fa-solid fa-utensils"></i>
+                  <h3>Inhouse Restaurant</h3>
+                </div>
+              </div>
+
+              <div class="box">
+                <div class="text">
+                  <i class="fa-solid fa-spa"></i>
+                  <h3>Ayurvedic Spa</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="right">
+              <img src="image/service/ayubowan.jpg" alt="service kvh" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- contact -->
+      <!-- make it shift -->
+
+      <!-- newsletter subscription -->
+      <section class="newsletter mtop">
+        <div class="container flex-space">
+          <h1>Subscribe to Our Newsletter</h1>
+          <input type="text" placeholder="Enter your email" />
+          <button type="submit">Subscribe</button>
+        </div>
+      </section>
+
+    </div>
     <!-- Footer -->
-    
+
     <footer>
       <div class="container grid">
         <div class="box">
